@@ -95,54 +95,75 @@ Puoi scoprire tutti i comandi disponibili digitando `repox --help`. Di seguito l
 
 ---
 
+---
+
 ## 📂 Esempio di Output Generato
 
-L'output (sia nel file che nella clipboard) è formattato in **Markdown Nativo**, lo standard preferito dalle AI per comprendere la sintassi del codice:
+L'output (sia nel file che nella clipboard) è formattato in **Markdown Nativo**, lo standard preferito dalle AI.
 
-```
+Immaginiamo un progetto demo chiamato `repox_demo`. Di seguito, come appare il file generato da `repox`. Nota come nel codice sorgente **sono state rimosse tutte le righe vuote** originali per risparmiare spazio, mantenendo però l'indentazione.
+
+````markdown
 # PROJECT STRUCTURE
 
-text
-my_project/
+```text
+repox_demo/
   src/
     main.rs
     utils.rs
+  frontend/
+    config.ts
+    types.ts
   Cargo.toml
+  README.md
+```
 
 # FILE CONTENTS
 
 ## File: `Cargo.toml`
-
-toml
+```toml
 [package]
-name = "my_project"
+name = "repox_demo"
 version = "0.1.0"
 edition = "2021"
+[dependencies]
+serde = { version = "1.0", features = ["derive"] }
+```
 
+## File: `config.ts`
+```typescript
+interface AppConfig {
+  apiUrl: string;
+  timeout: number;
+}
+const config: AppConfig = {
+  apiUrl: "https://api.example.com",
+  timeout: 5000,
+};
+export default config;
+```
 
 ## File: `src/main.rs`
-
-rust
+```rust
+mod utils;
 fn main() {
-    println!("Hello, AI!");
+    println!("Starting Repox Demo...");
+    // Initialize configuration
+    let config = utils::load_config();
+    if config.is_ok() {
+        println!("Config loaded successfully.");
+    } else {
+        eprintln!("Error loading config.");
+    }
 }
+```
 
----
-
-## 📊 Formato del Resoconto Terminale
-
-Al termine di ogni esecuzione, `repox` mostrerà un cruscotto riassuntivo pulito e professionale in lingua inglese:
-
-```text
->> Analyzing directory: /Users/leonardo/projects/my_project
->> Success: Context copied to clipboard!
-
-========================================
-          AI CONTEXT GENERATED          
-========================================
-  Files Processed:   14
-  Total Characters:  24850
-  Estimated Tokens:  ~6212
-  Empty Lines:       Optimized (Removed)
-========================================
+## File: `src/utils.rs`
+```rust
+use std::io;
+pub fn load_config() -> io::Result<()> {
+    // Simulating config load logic
+    println!("Loading configuration from file...");
+    Ok(())
+}
 ```
