@@ -99,40 +99,33 @@ Puoi scoprire tutti i comandi disponibili digitando `repox --help`. Di seguito l
 
 L'output (sia nel file che nella clipboard) è formattato in **Markdown Nativo**, lo standard preferito dalle AI per comprendere la sintassi del codice:
 
-```markdown
+```
 # PROJECT STRUCTURE
 
-```text
+text
 my_project/
   src/
     main.rs
     utils.rs
   Cargo.toml
 
-```
-
 # FILE CONTENTS
 
 ## File: `Cargo.toml`
 
-```toml
+toml
 [package]
 name = "my_project"
 version = "0.1.0"
 edition = "2021"
 
-```
 
 ## File: `src/main.rs`
 
-```rust
+rust
 fn main() {
     println!("Hello, AI!");
 }
-
-```
-
-```
 
 ---
 
@@ -152,3 +145,4 @@ Al termine di ogni esecuzione, `repox` mostrerà un cruscotto riassuntivo pulito
   Estimated Tokens:  ~6212
   Empty Lines:       Optimized (Removed)
 ========================================
+```
