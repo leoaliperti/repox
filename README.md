@@ -1,6 +1,3 @@
-Certamente! Ecco il codice Markdown pronto da copiare. Ti basta usare il pulsante di copia in alto a destra nel blocco di codice qui sotto e incollarlo nel tuo file `README.md` su GitHub.
-
-```markdown
 # repox ⚡
 
 `repox` è uno strumento da riga di comando (CLI) estremamente veloce e nativo, sviluppato in Rust. È progettato specificamente per impacchettare l'intero contesto di una cartella o di un progetto locale in un unico file di testo o direttamente negli appunti di sistema, pronto per essere inviato ai Large Language Models (LLM) come ChatGPT, Claude o Gemini.
@@ -155,5 +152,3 @@ Al termine di ogni esecuzione, `repox` mostrerà un cruscotto riassuntivo pulito
   Estimated Tokens:  ~6212
   Empty Lines:       Optimized (Removed)
 ========================================
-
-```
